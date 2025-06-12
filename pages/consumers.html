@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Expense Splitter</title>
+        <link rel="stylesheet" href="../css/consumers.css">
+        <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/navigation-bar.css">
+    </head>
+
+    <body>
+        <div class="navigation-bar">
+            <button class="navigation-button-top navigation-button-common navigation-button-common-current">Consumers</button>
+            <button class="navigation-button-bottom navigation-button-common">Bills</button>
+        </div>
+
+        <input type="text" class="new-consumer-name" placeholder="Enter consumer name" />
+        <button class="new-button">New Consumer</button>
+        <button class="clear-button">Clear</button>
+
+        <template class="consumers-row-template">
+            <tr>
+                <td class="consumer-id">1</td>
+                <td class="consumer-name">John Doe</td>
+            </tr>
+        </template>
+
+        <template class="consumers-column-header-template">
+            <tr>
+                <th class="number-column">ID</th>
+                <th class="content-column">Name</th>
+            </tr>
+        </template>
+
+        <table class="consumers-table">
+            <tr>
+                <th class="number-column">ID</th>
+                <th class="content-column">Name</th>
+            </tr>
+        </table>
+    </body>
+
+    <script src="../js/consumers.js" defer></script>
+</html>

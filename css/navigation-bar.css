@@ -1,0 +1,47 @@
+.navigation-bar{
+    display: flex;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+    background-color: lightgray;
+    border-radius: 10px;
+    grid-column: 1;
+    width: 100px;
+    box-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navigation-button-common{
+    height: 100%;
+    border-width: 0;
+    background-color: rgba(255, 255, 255, 0);
+    font-weight: bold;
+    text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navigation-button-common:hover{
+    background-color: rgb(240, 240, 240);
+    transition-duration: 100ms;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.navigation-button-common:active,
+.navigation-button-common-current{
+    background-color: rgb(240, 240, 240);
+    transition-duration: 100ms;
+    font-size: 15px;
+}
+
+.navigation-button-top{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.navigation-button-bottom{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
