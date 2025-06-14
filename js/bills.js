@@ -1,10 +1,10 @@
 import { Bill } from "./utils.js";
 
-let consumersData = JSON.parse(localStorage.getItem("consumers") || []);
+let consumersData = localStorage.getItem("consumers");
 
 let consumers = consumersData ? JSON.parse(consumersData) : [];
 
-let billsData = JSON.parse(localStorage.getItem("bills") || []);
+let billsData = localStorage.getItem("bills");
 
 let bills = billsData ? JSON.parse(billsData) : [];
 
