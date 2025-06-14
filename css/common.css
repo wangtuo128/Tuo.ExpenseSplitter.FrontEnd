@@ -42,6 +42,25 @@ font-size: 15px;
     cursor: pointer;
 }
 
+.remove-button{
+    border-radius: 30px;
+    border-width: 0;
+    margin: 0;
+    box-shadow: 1px 1px 2px rgba(0, 180, 100, 0.3);
+    background-color: rgb(165, 4, 31);
+    color: white;
+    width: 70px;
+    height: 20px;
+    font-weight: bold;
+}
+
+.remove-button:hover{
+    font-size: 15px;
+    background-color: rgb(180, 4, 31);
+    transition-duration: 30ms;
+    cursor: pointer;
+}
+
 table {
     border-collapse: collapse; /* 合并边框 */
 }
@@ -57,5 +76,6 @@ th{
 
 td {
     border-bottom: 1px solid black; /* 边框样式 */
+    vertical-align: middle;
     text-align: center;
 }

@@ -19,8 +19,13 @@ clearButtonElement.addEventListener("click", clearConsumers);
 renderConsumers();
 
 function addConsumer(){
-    let newConsumerId = consumers.length > 0 ? Math.max(...consumers.map(c => c.id)) + 1 : 1;
     let newConsumerName = newConsumerNameElement.value.trim();
+
+    if (newConsumerName === "") {
+        alert("Consumer name cannot be empty!");
+        return;
+    }
+    let newConsumerId = generateUniqueId();
     let newConsumer = new Consumer(newConsumerId, newConsumerName);
     consumers.push(newConsumer);
     localStorage.setItem("consumers", JSON.stringify(consumers));
@@ -40,10 +45,23 @@ function renderConsumers(){
     consumersTable.appendChild(columnHeaderTemplate.content.cloneNode(true));
     consumers.forEach(consumer => {
         let newRow = template.content.cloneNode(true);
-        newRow.querySelector(".consumer-id").textContent = consumer.id;
         newRow.querySelector(".consumer-name").textContent = consumer.name;
+        newRow.querySelector(".remove-button").consumerId = consumer.id;
+        newRow.querySelector(".remove-button").addEventListener("click", () => removeConsumer(consumer.id));
         consumersTable.appendChild(newRow);
     });
+}
+
+function removeConsumer(consumerId){
+    consumers = consumers.filter(consumer => consumer.id !== consumerId);
+    localStorage.setItem("consumers", JSON.stringify(consumers));
+    renderConsumers();
+}
+
+function generateUniqueId() {
+  const timestamp = Date.now().toString(36);
+  const randomPart = Math.random().toString(36).substr(2, 5);
+  return `${timestamp}-${randomPart}`;
 }
 
 class Consumer{
