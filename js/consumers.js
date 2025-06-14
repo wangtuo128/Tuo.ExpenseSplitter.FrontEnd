@@ -1,6 +1,13 @@
 import { Consumer } from "./utils.js";
 
-let consumers = JSON.parse(localStorage.getItem("consumers") || []);
+let consumers =  localStorage.getItem("consumers");
+
+if (consumers) {
+    consumers = JSON.parse(consumers);
+}
+else {
+    consumers = [];
+}
 
 let newButtonElement = document.querySelector(".new-button");
 
