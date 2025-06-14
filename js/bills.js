@@ -1,8 +1,12 @@
 import { Bill } from "./utils.js";
 
-let consumers = JSON.parse(localStorage.getItem("consumers") || []);
+let consumersData = JSON.parse(localStorage.getItem("consumers") || []);
 
-let bills = JSON.parse(localStorage.getItem("bills") || []);
+let consumers = consumersData ? JSON.parse(consumersData) : [];
+
+let billsData = JSON.parse(localStorage.getItem("bills") || []);
+
+let bills = billsData ? JSON.parse(billsData) : [];
 
 const newBillButtonElement = document.querySelector(".new-button");
 
