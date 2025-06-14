@@ -67,11 +67,11 @@ table {
 
 th{
     border-bottom: 2px solid black;
-    width: 200px;
+    min-width: 200px;
 }
 
 .number-column{
-    width: 50px;
+    min-width: 50px;
 }
 
 td {

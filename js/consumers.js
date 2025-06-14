@@ -1,8 +1,6 @@
 import { Consumer } from "./utils.js";
-import { generateUniqueId } from "./utils.js";
 
-
-let consumers = JSON.parse(localStorage.getItem("consumers"));
+let consumers = JSON.parse(localStorage.getItem("consumers") || []);
 
 let newButtonElement = document.querySelector(".new-button");
 
@@ -29,17 +27,21 @@ function addConsumer(){
         alert("Consumer name cannot be empty!");
         return;
     }
-    let newConsumerId = generateUniqueId();
-    let newConsumer = new Consumer(newConsumerId, newConsumerName);
+    let newConsumer = new Consumer(newConsumerName);
     consumers.push(newConsumer);
     localStorage.setItem("consumers", JSON.stringify(consumers));
-    console.log(`A consumer has been added！${JSON.parse(localStorage.getItem("consumers"))[consumers.length - 1].id}`);
     newConsumerNameElement.value = "";
     renderConsumers(newConsumer);
 }
 
 function clearConsumers(){
     consumers.splice(0, consumers.length);
+    localStorage.setItem("consumers", JSON.stringify(consumers));
+    renderConsumers();
+}
+
+function removeConsumer(consumerId){
+    consumers = consumers.filter(consumer => consumer.id !== consumerId);
     localStorage.setItem("consumers", JSON.stringify(consumers));
     renderConsumers();
 }
@@ -55,10 +57,3 @@ function renderConsumers(){
         consumersTable.appendChild(newRow);
     });
 }
-
-function removeConsumer(consumerId){
-    consumers = consumers.filter(consumer => consumer.id !== consumerId);
-    localStorage.setItem("consumers", JSON.stringify(consumers));
-    renderConsumers();
-}
-

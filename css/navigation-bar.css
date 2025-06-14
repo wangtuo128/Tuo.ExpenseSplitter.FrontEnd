@@ -17,13 +17,13 @@
 .navigation-button-common{
     height: 100%;
     border-width: 0;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgb(240, 240, 240);
     font-weight: bold;
     text-shadow: 1.5px 1.5px 4px rgba(0, 0, 0, 0.3);
 }
 
 .navigation-button-common:hover{
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(217, 217, 217);
     transition-duration: 100ms;
     font-size: 15px;
     cursor: pointer;
@@ -31,7 +31,7 @@
 
 .navigation-button-common:active,
 .navigation-button-common-current{
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(217, 217, 217);
     transition-duration: 100ms;
     font-size: 15px;
 }

@@ -9,35 +9,75 @@
 
     <body>
         <div class="navigation-bar">
-            <button class="navigation-button-top navigation-button-common navigation-button-common-current">Consumers</button>
-            <button class="navigation-button-bottom navigation-button-common">Bills</button>
-        </div>
+            <button class="navigation-button-top navigation-button-common">
+                <a href="consumers.html" class="nav-link">Consumers</a>
 
-        <input type="text" class="new-consumer-name" placeholder="Enter consumer name" />
-        <button class="new-button">New Consumer</button>
+            </button>
+
+            <button class="navigation-button-bottom navigation-button-common navigation-button-common-current">
+                <a href="bills.html" class="nav-link">Bills</a>
+            </button>
+        </div>
+        <h1>Bills</h1>
+
+        <input type="text" class="new-bill-title" placeholder="Enter bill title here..." />
+        <input type="text" class="new-bill-amount" placeholder="Enter bill amount here..." />
+        <button class="new-button">New Bill</button>
         <button class="clear-button">Clear</button>
 
-        <template class="consumers-row-template">
+        <template class="bills-row-template">
             <tr>
-                <td class="consumer-name"></td>
-                <td class="consumer-remove">
-                    <button class="remove-button"
-                    data-consumer-id="">
+                <td class="bill-title"></td>
+                <td class="bill-amount"></td>
+                <td class="bill-consumers"></td>
+                <td class="bill-remove">
+                    <button class="remove-button">
                         Remove
                     </button>
                 </td>
             </tr>
         </template>
 
-        <template class="consumers-column-header-template">
-            <tr>
-                <th class="content-column">Name</th>
-                <th class="content-column"></th>
+        <template class="bill-consumers-template">
+            <input type="checkbox" class="consumer-checkbox"/>
+            <label class="consumer-label">
+            </label>
+        </template>
 
+        <template class="bills-column-header-template">
+            <tr>
+                <th class="content-column">Title</th>
+                <th class="content-column">Amount(￥)</th>
+                <th class="content-column">Co-payers</th>
+                <th class="content-column"></th>
             </tr>
         </template>
 
-        <table class="consumers-table">
+        <table class="bills-table">
         </table>
+
+        <p>
+            <span class="bill-info">Note: The amount is in Chinese Yuan (￥). Please ensure that the total amount is split among the co-payers.</span>
+        </p>
+
+        <table class="consumers-shares-table">
+            
+        </table>
+
+        <template class="consumers-shares-column-header-template">
+            <tr>
+                <th class="content-column">Consumer</th>
+                <th class="content-column">Shares</th>
+            </tr>
+        </template>
+
+        <template class="consumers-shares-row-template">
+            <tr>
+                <td class="consumer-name"></td>
+                <td class="consumer-shares"></td>
+            </tr>
+        </template>
     </body>
+
+    <script type="module" src="../js/bills.js"></script>
 </html>
