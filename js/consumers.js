@@ -1,3 +1,7 @@
+import { Consumer } from "./utils.js";
+import { generateUniqueId } from "./utils.js";
+
+
 let consumers = JSON.parse(localStorage.getItem("consumers"));
 
 let newButtonElement = document.querySelector(".new-button");
@@ -58,15 +62,3 @@ function removeConsumer(consumerId){
     renderConsumers();
 }
 
-function generateUniqueId() {
-  const timestamp = Date.now().toString(36);
-  const randomPart = Math.random().toString(36).substr(2, 5);
-  return `${timestamp}-${randomPart}`;
-}
-
-class Consumer{
-    constructor(id, name){
-        this.id = id;
-        this.name = name;
-    }
-}

@@ -9,52 +9,35 @@
 
     <body>
         <div class="navigation-bar">
-            <button class="navigation-button-top navigation-button-common">Consumers</button>
-            <button class="navigation-button-bottom navigation-button-common navigation-button-common-current">Bills</button>
+            <button class="navigation-button-top navigation-button-common navigation-button-common-current">Consumers</button>
+            <button class="navigation-button-bottom navigation-button-common">Bills</button>
         </div>
-        <button class="new-button">New Bill</button>
-        <table class="consumer-table">
-            <tr>
-                <th class="number-column">ID</th>
-                <th class="content-column">Good</th>
-                <th class="number-column">Price(￥)</th>
-                <th class="content-column">John Doe</th>
-                <th class="content-column">Lebron James</th>
-                
-            </tr>
 
-            <tr>
-                <td>1</td>
-                <td>Bibigo</td>
-                <td>25.9</td>
-                <td>
-                    <input type="checkbox">
-                </td>
-                <td>
-                    <input type="checkbox">
-                </td>
-                
-            </tr>
+        <input type="text" class="new-consumer-name" placeholder="Enter consumer name" />
+        <button class="new-button">New Consumer</button>
+        <button class="clear-button">Clear</button>
 
+        <template class="consumers-row-template">
             <tr>
-                <td>2</td>
-                <td>Pasta</td>
-                <td>19.9</td>
-                <td>
-                    <input type="checkbox">
+                <td class="consumer-name"></td>
+                <td class="consumer-remove">
+                    <button class="remove-button"
+                    data-consumer-id="">
+                        Remove
+                    </button>
                 </td>
-                <td>
-                    <input type="checkbox">
-                </td>
-                
             </tr>
-            
+        </template>
+
+        <template class="consumers-column-header-template">
             <tr>
-                <td colspan="2">Total</td>
-                <td>35.8</td>
-                <td>17.9</td>
-                <td>17.9</td>
+                <th class="content-column">Name</th>
+                <th class="content-column"></th>
+
             </tr>
+        </template>
+
+        <table class="consumers-table">
         </table>
     </body>
 </html>
